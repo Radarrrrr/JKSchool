@@ -15,6 +15,7 @@
 		0C627A3D2233A78400DEC534 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A3C2233A78400DEC534 /* MsgViewController.m */; };
 		0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A3F2233A7A000DEC534 /* HealthViewController.m */; };
 		0C627A432233A7B600DEC534 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A422233A7B600DEC534 /* MineViewController.m */; };
+		B651A235D171D7FBE139DF46 /* libPods-JKSchool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,9 @@
 		0C627A3F2233A7A000DEC534 /* HealthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthViewController.m; sourceTree = "<group>"; };
 		0C627A412233A7B600DEC534 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		0C627A422233A7B600DEC534 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		14B747BD835948A13312CD33 /* Pods-JKSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.release.xcconfig"; sourceTree = "<group>"; };
+		E4FCE38072383688F6346AD2 /* Pods-JKSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.debug.xcconfig"; sourceTree = "<group>"; };
+		F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKSchool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,17 +44,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B651A235D171D7FBE139DF46 /* libPods-JKSchool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080192B9186B10CB0F22E93D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4FCE38072383688F6346AD2 /* Pods-JKSchool.debug.xcconfig */,
+				14B747BD835948A13312CD33 /* Pods-JKSchool.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		0C627A0522339AFB00DEC534 = {
 			isa = PBXGroup;
 			children = (
 				0C627A1022339AFB00DEC534 /* JKSchool */,
 				0C627A0F22339AFB00DEC534 /* Products */,
+				080192B9186B10CB0F22E93D /* Pods */,
+				A988E32387995A262F768A84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +131,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		A988E32387995A262F768A84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +146,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C627A2422339AFD00DEC534 /* Build configuration list for PBXNativeTarget "JKSchool" */;
 			buildPhases = (
+				C749C5741B2B2AD5ACD78BA6 /* [CP] Check Pods Manifest.lock */,
 				0C627A0A22339AFB00DEC534 /* Sources */,
 				0C627A0B22339AFB00DEC534 /* Frameworks */,
 				0C627A0C22339AFB00DEC534 /* Resources */,
@@ -178,6 +203,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C749C5741B2B2AD5ACD78BA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JKSchool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C627A0A22339AFB00DEC534 /* Sources */ = {
@@ -321,6 +371,7 @@
 		};
 		0C627A2522339AFD00DEC534 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4FCE38072383688F6346AD2 /* Pods-JKSchool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +389,7 @@
 		};
 		0C627A2622339AFD00DEC534 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14B747BD835948A13312CD33 /* Pods-JKSchool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
