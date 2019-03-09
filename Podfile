@@ -8,5 +8,9 @@ target 'JKSchool' do
   # Pods for JKSchool
 
 pod 'AFNetworking'
+pod 'RDDevLibrary'
+pod 'RDNetService'
+pod "RDTableView"
+pod "RDWebTools"
 
 end
