@@ -70,6 +70,8 @@
     self.window.rootViewController = mainTabBar;
     
     
+    //初始化网络参数
+    
     
     return YES;
 }

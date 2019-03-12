@@ -20,9 +20,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"健康校园";
     
-    
+    [RDNetService requestGetWithURL:RequestUrlMake(ACTION_ROTATES, nil) progress:^(double progress) {
+        
+    } success:^(id response) {
+        
+        int i=0;
+    } failure:^(NSDictionary *errdic) {
+        
+    }];
     
 }
+
 
 
 @end
