@@ -34,4 +34,21 @@
     return data;
 }
 
++ (BOOL)iPhoneXorLater
+{
+    if([UIScreen instancesRespondToSelector:@selector(currentMode)])
+    {
+        float w = [[UIScreen mainScreen] currentMode].size.width;
+        float h = [[UIScreen mainScreen] currentMode].size.height;
+        float k = h/w; //屏幕高宽比
+        
+        if(k > 2) 
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 @end

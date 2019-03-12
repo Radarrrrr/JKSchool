@@ -16,6 +16,7 @@
 		0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A3F2233A7A000DEC534 /* HealthViewController.m */; };
 		0C627A432233A7B600DEC534 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A422233A7B600DEC534 /* MineViewController.m */; };
 		0C8D2D5222366303004754D5 /* JKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D2D5122366303004754D5 /* JKFunction.m */; };
+		0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF05B032237E4D00076F932 /* ScrollCell.m */; };
 		B651A235D171D7FBE139DF46 /* libPods-JKSchool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		0C8D2D4F223643BE004754D5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0C8D2D5022366303004754D5 /* JKFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKFunction.h; sourceTree = "<group>"; };
 		0C8D2D5122366303004754D5 /* JKFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKFunction.m; sourceTree = "<group>"; };
+		0CF05B022237E4D00076F932 /* ScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollCell.h; sourceTree = "<group>"; };
+		0CF05B032237E4D00076F932 /* ScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollCell.m; sourceTree = "<group>"; };
 		14B747BD835948A13312CD33 /* Pods-JKSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.release.xcconfig"; sourceTree = "<group>"; };
 		E4FCE38072383688F6346AD2 /* Pods-JKSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.debug.xcconfig"; sourceTree = "<group>"; };
 		F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKSchool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +137,8 @@
 		0C627A372233A5EB00DEC534 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0CF05B022237E4D00076F932 /* ScrollCell.h */,
+				0CF05B032237E4D00076F932 /* ScrollCell.m */,
 				0C627A382233A60B00DEC534 /* HomeViewController.h */,
 				0C627A392233A60B00DEC534 /* HomeViewController.m */,
 			);
@@ -249,6 +254,7 @@
 				0C627A432233A7B600DEC534 /* MineViewController.m in Sources */,
 				0C8D2D5222366303004754D5 /* JKFunction.m in Sources */,
 				0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */,
+				0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */,
 				0C627A3A2233A60B00DEC534 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
