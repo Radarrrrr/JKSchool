@@ -15,6 +15,7 @@
 #define VIEW_HEIGHT        [UIScreen mainScreen].bounds.size.height - STATUS_BAR_HEIGHT - 49  //从导航条向下，tabbar向上的显示区域高度
 #define VIEW_HEIGHT_TAB    VIEW_HEIGHT+49  //导航条向下的所有区域高度，用在没有tabbar的页面中
 
+#define COLOR(x) [RDFunction colorFromHexString:x] //16进制颜色(html颜色值)字符串转为UIColor 如：@"#3300ff"
 
 #define AT(x)           [JKFunction fixedPixel:x]           //把像素尺寸按设备不同等比例调整，基础尺寸为750x1334
 #define IMAGE(str)      [UIImage imageNamed:str]            //快速创建一个图片对象

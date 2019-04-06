@@ -21,6 +21,7 @@
 		0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A3F2233A7A000DEC534 /* HealthViewController.m */; };
 		0C627A432233A7B600DEC534 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A422233A7B600DEC534 /* MineViewController.m */; };
 		0C8D2D5222366303004754D5 /* JKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D2D5122366303004754D5 /* JKFunction.m */; };
+		0CE5BF552258ACF800300C20 /* DDCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5BF532258ACF700300C20 /* DDCenter.m */; };
 		0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF05B032237E4D00076F932 /* ScrollCell.m */; };
 		B651A235D171D7FBE139DF46 /* libPods-JKSchool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,8 @@
 		0C8D2D4F223643BE004754D5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0C8D2D5022366303004754D5 /* JKFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKFunction.h; sourceTree = "<group>"; };
 		0C8D2D5122366303004754D5 /* JKFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKFunction.m; sourceTree = "<group>"; };
+		0CE5BF532258ACF700300C20 /* DDCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCenter.m; sourceTree = "<group>"; };
+		0CE5BF542258ACF800300C20 /* DDCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCenter.h; sourceTree = "<group>"; };
 		0CF05B022237E4D00076F932 /* ScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollCell.h; sourceTree = "<group>"; };
 		0CF05B032237E4D00076F932 /* ScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollCell.m; sourceTree = "<group>"; };
 		14B747BD835948A13312CD33 /* Pods-JKSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				0C308D87224C4A5E000763DD /* Common */,
 				0C627A1122339AFB00DEC534 /* AppDelegate.h */,
 				0C627A1222339AFB00DEC534 /* AppDelegate.m */,
+				0CE5BF542258ACF800300C20 /* DDCenter.h */,
+				0CE5BF532258ACF700300C20 /* DDCenter.m */,
 				0C8D2D4F223643BE004754D5 /* Constants.h */,
 				0C8D2D5022366303004754D5 /* JKFunction.h */,
 				0C8D2D5122366303004754D5 /* JKFunction.m */,
@@ -311,6 +316,7 @@
 				0C308D8B224C4A5E000763DD /* DDImagePageScrollView.m in Sources */,
 				0C627A1322339AFB00DEC534 /* AppDelegate.m in Sources */,
 				0C627A432233A7B600DEC534 /* MineViewController.m in Sources */,
+				0CE5BF552258ACF800300C20 /* DDCenter.m in Sources */,
 				0C8D2D5222366303004754D5 /* JKFunction.m in Sources */,
 				0C1E788B225867420036A4E3 /* SampleCell.m in Sources */,
 				0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */,

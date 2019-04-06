@@ -54,20 +54,20 @@
     mineNav.navigationBar.translucent = NO; //不要导航条模糊，为了让页面从导航条下部是0开始，如果为YES，则从屏幕顶部开始是0
     mineNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"bar_icon_mine"] selectedImage:[UIImage imageNamed:@"bar_icon_mine_sel"]];
 
+    //主框架
+    self.mainTabBar = [[UITabBarController alloc] init];
+    _mainTabBar.view.backgroundColor = [UIColor whiteColor];
+    _mainTabBar.tabBar.backgroundColor = [UIColor whiteColor];
+    _mainTabBar.tabBar.backgroundImage = [[UIImage alloc] init];
     
-    UITabBarController *mainTabBar = [[UITabBarController alloc] init];
-    mainTabBar.view.backgroundColor = [UIColor whiteColor];
-    mainTabBar.tabBar.backgroundColor = [UIColor whiteColor];
-    mainTabBar.tabBar.backgroundImage = [[UIImage alloc] init];
-    
-    [mainTabBar setViewControllers:[NSArray arrayWithObjects:
+    [_mainTabBar setViewControllers:[NSArray arrayWithObjects:
                                     homeNav,
                                     msgNav,
                                     healthNav,
                                     mineNav,
                                     nil]];
     
-    self.window.rootViewController = mainTabBar;
+    self.window.rootViewController = _mainTabBar;
     
     
     //初始化网络参数

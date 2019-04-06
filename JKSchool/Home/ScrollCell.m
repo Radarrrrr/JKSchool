@@ -30,7 +30,7 @@
     
     //add _circleView
     self.circleView = [[DDImagePageScrollView alloc] initWithFrame:CGRectMake(20, 0, AT(335), AT(120))];
-    _circleView.backgroundColor = [UIColor redColor];
+    _circleView.backgroundColor = [UIColor clearColor];
     _circleView.delegate = self;
     _circleView.roundRectEnabled = YES;
     _circleView.cacheEnabled = YES;
@@ -40,8 +40,9 @@
     _circleView.ignoreMemory = YES;
     _circleView.circleEnabled = YES;
     _circleView.autoPlayTimeInterval = 3;
+    _circleView.pageCtrl.pageIndicatorTintColor = COLOR(@"#00B9AA");
+    _circleView.pageCtrl.currentPageIndicatorTintColor = COLOR(@"#005E56");
     [self.contentView addSubview:_circleView];
-    
     
 }
 - (NSNumber*)setCellData:(id)data atIndexPath:(NSIndexPath*)indexPath
@@ -86,6 +87,20 @@
     }
     
     return [NSNumber numberWithFloat:AT(120)];
+}
+
+
+//DDImagePageScrollViewDelegate
+- (void)ddImagePageScrollViewDidTapInPage:(DDImagePageScrollView*)pageScrollView pageIndex:(NSInteger)index atPoint:(CGPoint)atPoint pageImage:(UIImage*)image pageImageURL:(NSString*)imageURL
+{
+    NSDictionary *dict = [_dataArray objectAtIndex:index]; 
+    NSNumber *circleID = [dict objectForKey:@"id"];
+    
+    NSString *circle_id = [circleID stringValue];
+    
+    //对接JKCenter直接跳转
+    NSString *linkUrl = [NSString stringWithFormat:@"topic://id=%@", circle_id];
+    [DDCenter actionForLinkURL:linkUrl];
 }
 
 
