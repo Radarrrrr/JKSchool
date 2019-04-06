@@ -9,6 +9,7 @@
 #import "DDCenter.h"
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "LoginViewController.h"
 
 
 @implementation DDCenter
@@ -160,7 +161,18 @@
         webVC.url = topicURL;
         [navController pushViewController:webVC animated:YES];
     }
-                           
+    else if([linkURL hasPrefix:@"login://"]) //呼叫登陆页
+    {
+        //login://
+        LoginViewController *loginVC = [[LoginViewController alloc] init];
+        UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        loginNav.navigationBarHidden = NO;
+        loginNav.navigationBar.translucent = NO; //不要导航条模糊，为了让页面从导航条下部是0开始，如果为YES，则从屏幕顶部开始是0
+        
+        [appDele.mainTabBar presentViewController:loginNav animated:YES completion:^{
+            
+        }];
+    }                      
     
 
      

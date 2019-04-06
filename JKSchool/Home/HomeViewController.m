@@ -60,6 +60,12 @@
     [self engineStartLoading];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+}
+
 
 - (void)engineStartLoading
 {

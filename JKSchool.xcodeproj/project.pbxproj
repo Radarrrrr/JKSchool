@@ -11,6 +11,8 @@
 		0C1E788422585D3F0036A4E3 /* DDURLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E788122585D3F0036A4E3 /* DDURLImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C1E788822585DC30036A4E3 /* DDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E788622585DC30036A4E3 /* DDTimer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C1E788B225867420036A4E3 /* SampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E7889225867420036A4E3 /* SampleCell.m */; };
+		0C2CB73F2258FA60000AD904 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2CB73E2258FA60000AD904 /* LoginViewController.m */; };
+		0C2CB7422258FAAB000AD904 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2CB7412258FAAB000AD904 /* RegistViewController.m */; };
 		0C308D8B224C4A5E000763DD /* DDImagePageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C308D89224C4A5E000763DD /* DDImagePageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C627A1322339AFB00DEC534 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A1222339AFB00DEC534 /* AppDelegate.m */; };
 		0C627A1B22339AFD00DEC534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C627A1A22339AFD00DEC534 /* Assets.xcassets */; };
@@ -35,6 +37,10 @@
 		0C1E788722585DC30036A4E3 /* DDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTimer.h; sourceTree = "<group>"; };
 		0C1E7889225867420036A4E3 /* SampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCell.m; sourceTree = "<group>"; };
 		0C1E788A225867420036A4E3 /* SampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCell.h; sourceTree = "<group>"; };
+		0C2CB73D2258FA60000AD904 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0C2CB73E2258FA60000AD904 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0C2CB7402258FAAB000AD904 /* RegistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
+		0C2CB7412258FAAB000AD904 /* RegistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		0C308D89224C4A5E000763DD /* DDImagePageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDImagePageScrollView.m; sourceTree = "<group>"; };
 		0C308D8A224C4A5E000763DD /* DDImagePageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDImagePageScrollView.h; sourceTree = "<group>"; };
 		0C627A0E22339AFB00DEC534 /* JKSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +112,17 @@
 			path = DDTimer;
 			sourceTree = "<group>";
 		};
+		0C2CB73C2258FA3A000AD904 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0C2CB73D2258FA60000AD904 /* LoginViewController.h */,
+				0C2CB73E2258FA60000AD904 /* LoginViewController.m */,
+				0C2CB7402258FAAB000AD904 /* RegistViewController.h */,
+				0C2CB7412258FAAB000AD904 /* RegistViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		0C308D87224C4A5E000763DD /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +163,7 @@
 		0C627A1022339AFB00DEC534 /* JKSchool */ = {
 			isa = PBXGroup;
 			children = (
+				0C2CB73C2258FA3A000AD904 /* Login */,
 				0C627A372233A5EB00DEC534 /* Home */,
 				0C627A2722339C8400DEC534 /* Health */,
 				0C627A2922339C8400DEC534 /* Message */,
@@ -324,6 +342,8 @@
 				0C1E788822585DC30036A4E3 /* DDTimer.m in Sources */,
 				0C627A3A2233A60B00DEC534 /* HomeViewController.m in Sources */,
 				0C1E788422585D3F0036A4E3 /* DDURLImageView.m in Sources */,
+				0C2CB7422258FAAB000AD904 /* RegistViewController.m in Sources */,
+				0C2CB73F2258FA60000AD904 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

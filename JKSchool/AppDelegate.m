@@ -73,6 +73,9 @@
     //初始化网络参数
     
     
+    //判断本地登录状态
+    [self performSelector:@selector(checkLoginStatus) withObject:nil afterDelay:1.5];
+    
     return YES;
 }
 
@@ -102,6 +105,21 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
+- (void)checkLoginStatus
+{
+    //从本地userdefault里边获取登录状态
+    
+    //如果已经登陆，直接进入首页
+    
+    //如果未登录，呼叫登陆页
+    [DDCenter actionForLinkURL:@"login://"];
+    
+}
+
+
 
 
 @end
