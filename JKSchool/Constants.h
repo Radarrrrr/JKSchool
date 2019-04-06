@@ -26,6 +26,9 @@
 
 #define RequestUrlMake(action, parameter) [JKFunction assembleRequestUrl:action param:parameter] //目前只支持一个参数
 
+
+
+
 //接口宏设定
 #define API_PREFIX      @"http://testapi.cdhhrs.com" //接口地址
 

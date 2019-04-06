@@ -137,7 +137,9 @@
     {
         //http:// & https://  
         //http和https都直接开启web页面显示
-        
+        RDWebViewController *webVC = [[RDWebViewController alloc] init];
+        webVC.url = linkURL;
+        [navController pushViewController:webVC animated:YES];
     }
     else if([linkURL hasPrefix:@"qrscaner://"]) //打开二维码扫描器
     {
@@ -150,8 +152,13 @@
     else if([linkURL hasPrefix:@"topic://"]) //跳转到专题页
     {
         //topic://id=x
-        //使用web装载H5专题页
+        //使用web装载H5专题页 //http://testapi.cdhhrs.com/schoolTest/page/school/detail.html?id=20
+        NSString *tid = [self getProperty:@"id" formLinkURL:linkURL];
+        NSString *topicURL = [NSString stringWithFormat:@"%@/schoolTest/page/school/detail.html?id=%@", API_PREFIX, tid];
         
+        RDWebViewController *webVC = [[RDWebViewController alloc] init];
+        webVC.url = topicURL;
+        [navController pushViewController:webVC animated:YES];
     }
                            
     
