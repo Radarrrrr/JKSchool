@@ -10,7 +10,8 @@
 
 @interface ScrollCell ()
 
-@property (nonatomic, strong) UILabel *tLabel;
+@property (nonatomic, strong) DDImagePageScrollView *circleView;
+@property (nonatomic, copy) NSArray *dataArray;
 
 @end
 
@@ -27,28 +28,64 @@
     //self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    
-    //add _tLabel
-    self.tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
-    _tLabel.backgroundColor = [UIColor clearColor];
-    _tLabel.textAlignment = NSTextAlignmentCenter;
-    _tLabel.font = [UIFont boldSystemFontOfSize:16.0];
-    _tLabel.textColor = [UIColor blueColor];
-    [self.contentView addSubview:_tLabel];
-    
-    //add line
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(10, 99, 375, 1)];
-    line.backgroundColor = [UIColor darkGrayColor];
-    [self.contentView addSubview:line];
+    //add _circleView
+    self.circleView = [[DDImagePageScrollView alloc] initWithFrame:CGRectMake(20, 0, AT(335), AT(120))];
+    _circleView.backgroundColor = [UIColor redColor];
+    _circleView.delegate = self;
+    _circleView.roundRectEnabled = YES;
+    _circleView.cacheEnabled = YES;
+    _circleView.tapEnabled = YES;
+    _circleView.zoomEnabled = NO;
+    _circleView.pageCtrlEnabled = YES;
+    _circleView.ignoreMemory = YES;
+    _circleView.circleEnabled = YES;
+    _circleView.autoPlayTimeInterval = 3;
+    [self.contentView addSubview:_circleView];
     
     
 }
 - (NSNumber*)setCellData:(id)data atIndexPath:(NSIndexPath*)indexPath
 {
-    //根据data设定cell上组件的属性，并返回计算以后的cell高度, 用number类型装进去，[重要]cell高度必须要做计算并返回，如果返回nil就使用默认的44高度了
-    _tLabel.text = (NSString *)data;
+//[
+//    {
+//        id = 26;
+//        img = "https://www.cdhhrs.com/uploads/Advertise/20190218220408.jpg";
+//        "small_img" = "https://www.cdhhrs.com/uploads/Advertise/thumb/20190218220408.jpg";
+//        title = "\U5f00\U5b66\U90a3\U70b9\U4e8b\Uff1a\U4ece\U9884\U9632\U4f20\U67d3\U75c5\U5f00\U59cb";
+//        weight = 96;
+//    },
+//    {
+//        id = 22;
+//        img = "https://www.cdhhrs.com/uploads/Advertise/20181207185438.png";
+//        "small_img" = "https://www.cdhhrs.com/uploads/Advertise/thumb/20181207185438.png";
+//        title = "\U627f\U5fb7\U5e02\U5b66\U6821\U548c\U6258\U5e7c\U673a\U6784\U4f20\U67d3\U75c5\U548c\U7a81\U53d1\U516c\U5171\U536b\U751f\U4e8b\U4ef6\U9632\U63a7\U5de5\U4f5c\U6307\U5357";
+//        weight = 97;
+//    },
+//    ...
+//]
     
-    return [NSNumber numberWithFloat:100];
+    //根据data设定cell上组件的属性，并返回计算以后的cell高度, 用number类型装进去，[重要]cell高度必须要做计算并返回，如果返回nil就使用默认的44高度了
+    if(ARRAYVALID(data))
+    {
+        self.dataArray = (NSArray*)data;
+        
+        NSMutableArray *urls = [[NSMutableArray alloc] init];
+        for(NSDictionary *dic in _dataArray)
+        {
+            if(DICTIONARYVALID(dic))
+            {
+                NSString *img_url = [dic objectForKey:@"img"];
+                if(STRVALID(img_url))
+                {
+                    [urls addObject:img_url];
+                }
+            }
+        }
+        
+        [_circleView refreshPagesForImageURLs:urls startIndex:0];
+    }
+    
+    return [NSNumber numberWithFloat:AT(120)];
 }
 
 

@@ -16,8 +16,12 @@
 #define VIEW_HEIGHT_TAB    VIEW_HEIGHT+49  //导航条向下的所有区域高度，用在没有tabbar的页面中
 
 
+#define AT(x)           [JKFunction fixedPixel:x]           //把像素尺寸按设备不同等比例调整，基础尺寸为750x1334
+#define IMAGE(str)      [UIImage imageNamed:str]            //快速创建一个图片对象
 
-#define IMAGE(str)  [UIImage imageNamed:str]     //快速创建一个图片对象
+#define StatusCode(d)   [JKFunction statusCodeFromData:d]       //从返回数据中获取状态码, 返回值为 NSInteger 类型
+#define NICEDATA(d)     [JKFunction checkStatusCodeOKForData:d] //检测返回的数据是否是合理数据
+
 
 #define RequestUrlMake(action, parameter) [JKFunction assembleRequestUrl:action param:parameter] //目前只支持一个参数
 

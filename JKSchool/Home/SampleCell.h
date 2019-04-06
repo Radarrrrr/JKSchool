@@ -1,5 +1,5 @@
 //
-//  ScrollCell.h
+//  SampleCell.h
 //  JKSchool
 //
 //  Created by radar on 2019/3/9.
@@ -7,8 +7,7 @@
 //
 
 #import "RDSuperCell.h"
-#import "DDImagePageScrollView.h"
 
-@interface ScrollCell : RDSuperCell <DDImagePageScrollViewDelegate>
+@interface SampleCell : RDSuperCell
 
 @end

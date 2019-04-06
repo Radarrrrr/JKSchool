@@ -51,4 +51,29 @@
     return NO;
 }
 
++ (float)fixedPixel:(float)pixel
+{
+    //把像素尺寸按设备不同等比例调整，基础尺寸为750x1334
+    float w = [[UIScreen mainScreen] currentMode].size.width;
+    float k = w/750.0; //当前设备与750基础尺寸的比例
+
+    return pixel*k;
+}
+
++ (NSInteger)statusCodeFromData:(NSDictionary*)data
+{
+    if(!DICTIONARYVALID(data)) return -1;
+    NSNumber *code = [data objectForKey:@"status_code"];
+    if(!code) return -1;
+    return [code integerValue];
+}
+
++ (BOOL)checkStatusCodeOKForData:(NSDictionary*)data
+{
+    NSInteger code = [JKFunction statusCodeFromData:data];
+    if(code == 200) return YES;
+    return NO;
+}
+
+
 @end

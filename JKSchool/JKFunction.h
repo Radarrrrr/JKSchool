@@ -16,5 +16,10 @@
 
 + (BOOL)iPhoneXorLater; //是否iPhoneX以后的机型
 
++ (float)fixedPixel:(float)pixel; //把像素尺寸按设备不同等比例调整，基础尺寸为750x1334
+
++ (NSInteger)statusCodeFromData:(NSDictionary*)data; //从返回数据中获取状态码
++ (BOOL)checkStatusCodeOKForData:(NSDictionary*)data;//检查是否数据是合格的好数据，即是否status code为200
+
 @end
 

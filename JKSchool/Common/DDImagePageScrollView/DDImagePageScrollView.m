@@ -324,9 +324,7 @@
 		}
         else
         {
-            //[pageView startLoading:imageUrl];
-            //qz 2015.8.18 换用此方法 把下载的图片等比压缩 可以节省约20M内存
-            [pageView startLoading:imageUrl relyOnPixel:page_w];
+            [pageView startLoading:imageUrl];
         }
   
 		[_pages replaceObjectAtIndex:scrollIndex withObject:scrollV];
