@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1E788322585D3F0036A4E3 /* URLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E788022585D3F0036A4E3 /* URLCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0C1E788422585D3F0036A4E3 /* DDURLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E788122585D3F0036A4E3 /* DDURLImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0C1E788822585DC30036A4E3 /* DDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E788622585DC30036A4E3 /* DDTimer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0C308D8B224C4A5E000763DD /* DDImagePageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C308D89224C4A5E000763DD /* DDImagePageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0C627A1322339AFB00DEC534 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A1222339AFB00DEC534 /* AppDelegate.m */; };
 		0C627A1B22339AFD00DEC534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C627A1A22339AFD00DEC534 /* Assets.xcassets */; };
 		0C627A1E22339AFD00DEC534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C627A1C22339AFD00DEC534 /* LaunchScreen.storyboard */; };
@@ -21,6 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1E787F22585D3F0036A4E3 /* DDURLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDURLImageView.h; sourceTree = "<group>"; };
+		0C1E788022585D3F0036A4E3 /* URLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCache.m; sourceTree = "<group>"; };
+		0C1E788122585D3F0036A4E3 /* DDURLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDURLImageView.m; sourceTree = "<group>"; };
+		0C1E788222585D3F0036A4E3 /* URLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCache.h; sourceTree = "<group>"; };
+		0C1E788622585DC30036A4E3 /* DDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTimer.m; sourceTree = "<group>"; };
+		0C1E788722585DC30036A4E3 /* DDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTimer.h; sourceTree = "<group>"; };
+		0C308D89224C4A5E000763DD /* DDImagePageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDImagePageScrollView.m; sourceTree = "<group>"; };
+		0C308D8A224C4A5E000763DD /* DDImagePageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDImagePageScrollView.h; sourceTree = "<group>"; };
 		0C627A0E22339AFB00DEC534 /* JKSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C627A1122339AFB00DEC534 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0C627A1222339AFB00DEC534 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,6 +80,45 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		0C1E787E22585D3F0036A4E3 /* DDURLImageView */ = {
+			isa = PBXGroup;
+			children = (
+				0C1E787F22585D3F0036A4E3 /* DDURLImageView.h */,
+				0C1E788122585D3F0036A4E3 /* DDURLImageView.m */,
+				0C1E788222585D3F0036A4E3 /* URLCache.h */,
+				0C1E788022585D3F0036A4E3 /* URLCache.m */,
+			);
+			path = DDURLImageView;
+			sourceTree = "<group>";
+		};
+		0C1E788522585DC30036A4E3 /* DDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				0C1E788622585DC30036A4E3 /* DDTimer.m */,
+				0C1E788722585DC30036A4E3 /* DDTimer.h */,
+			);
+			path = DDTimer;
+			sourceTree = "<group>";
+		};
+		0C308D87224C4A5E000763DD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0C1E788522585DC30036A4E3 /* DDTimer */,
+				0C1E787E22585D3F0036A4E3 /* DDURLImageView */,
+				0C308D88224C4A5E000763DD /* DDImagePageScrollView */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0C308D88224C4A5E000763DD /* DDImagePageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				0C308D8A224C4A5E000763DD /* DDImagePageScrollView.h */,
+				0C308D89224C4A5E000763DD /* DDImagePageScrollView.m */,
+			);
+			path = DDImagePageScrollView;
+			sourceTree = "<group>";
+		};
 		0C627A0522339AFB00DEC534 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +144,7 @@
 				0C627A2722339C8400DEC534 /* Health */,
 				0C627A2922339C8400DEC534 /* Message */,
 				0C627A2822339C8400DEC534 /* Mine */,
+				0C308D87224C4A5E000763DD /* Common */,
 				0C627A1122339AFB00DEC534 /* AppDelegate.h */,
 				0C627A1222339AFB00DEC534 /* AppDelegate.m */,
 				0C8D2D4F223643BE004754D5 /* Constants.h */,
@@ -248,14 +300,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1E788322585D3F0036A4E3 /* URLCache.m in Sources */,
 				0C627A3D2233A78400DEC534 /* MsgViewController.m in Sources */,
 				0C627A2122339AFD00DEC534 /* main.m in Sources */,
+				0C308D8B224C4A5E000763DD /* DDImagePageScrollView.m in Sources */,
 				0C627A1322339AFB00DEC534 /* AppDelegate.m in Sources */,
 				0C627A432233A7B600DEC534 /* MineViewController.m in Sources */,
 				0C8D2D5222366303004754D5 /* JKFunction.m in Sources */,
 				0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */,
 				0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */,
+				0C1E788822585DC30036A4E3 /* DDTimer.m in Sources */,
 				0C627A3A2233A60B00DEC534 /* HomeViewController.m in Sources */,
+				0C1E788422585D3F0036A4E3 /* DDURLImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
