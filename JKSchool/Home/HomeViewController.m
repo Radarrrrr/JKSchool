@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 
+
 @interface HomeViewController () <RDTableViewDelegate>
 
 @property (nonatomic, strong) RDTableView *contentTable;
@@ -67,6 +68,8 @@
 }
 
 
+
+#pragma mark - 数据读取连续引擎
 - (void)engineStartLoading
 {
     //读取用户banner数据
@@ -74,16 +77,29 @@
     
     //读取轮播图楼层
     [self loadingCircleScroll:^{
-        
-        //处理下个楼层业务
-        
-        
-        [self->_contentTable refreshTable:^{
+
+        //读取小喇叭楼层
+        [self loadingHorn:^{
+            
+            //处理下个楼层业务
+            //...
+            
             
         }];
+
     }];
 }
 
+
+
+
+
+#pragma mark - 浮层工具条
+- (void)callCategroyLayer
+{
+    //起浮层
+    
+}
 
 
 
@@ -215,6 +231,7 @@
 
 
 
+
 #pragma mark - 轮播图楼层
 - (void)loadingCircleScroll:(void(^)(void))completion
 {
@@ -223,12 +240,12 @@
     } success:^(id response) {
         
         //处理轮播图数据
-        [self handleCircleData:response];
-        
-        if(completion)
-        {
-            completion();
-        }
+        [self handleCircleData:response completion:^{
+            if(completion)
+            {
+                completion();
+            }
+        }];
         
     } failure:^(NSDictionary *errdic) {
         
@@ -240,24 +257,111 @@
     }];
 }
 
-- (void)handleCircleData:(NSDictionary*)data
+
+
+- (void)handleCircleData:(NSDictionary*)data completion:(void(^)(void))completion
 {
     if(!DICTIONARYVALID(data)) return;
     if(!NICEDATA(data)) return;
     
     NSArray *arrays = [data objectForKey:@"data"];
-    [_contentTable appendData:arrays useCell:@"ScrollCell" toSection:0];
-}
-
-
-
-
-#pragma mark - 浮层工具条
-- (void)callCategroyLayer
-{
-    //起浮层
+    //[_contentTable appendData:arrays useCell:@"ScrollCell" toSection:0];
     
+    //填充数据
+    [_contentTable insertData:arrays useCell:@"ScrollCell" toIndexPath:RDIndexPath(0, 0)];
+    
+    //刷新页面
+    [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
+        
+        if(completion)
+        {
+            completion();
+        }
+    } ];
+
 }
+
+
+
+
+
+
+
+#pragma mark - 小喇叭楼层
+- (void)loadingHorn:(void(^)(void))completion
+{
+    [RDNetService requestGetWithURL:RequestUrlMake(ACTION_MESSAGES, nil) progress:^(double progress) {
+        
+    } success:^(id response) {
+        
+        //处理轮播图数据
+        [self handleHornData:response completion:^{
+            if(completion)
+            {
+                completion();
+            }
+        }]; 
+        
+    } failure:^(NSDictionary *errdic) {
+        
+        //处理数据读取失败提示
+        
+        
+        //TO DO: 这里是测试数据，需要调试消息列表接口
+        //----------------测试的数据
+        NSDictionary *data = @{@"status_code":@"200",
+                               @"data":@[
+                                         @{@"link_word":@"张无忌的入会申请", @"link_url":@"http://www.baidu.com"},
+                                         @{@"link_word":@"王重阳九阳神功", @"link_url":@"http://www.163.com"},
+                                         @{@"link_word":@"张慧仪入班申请", @"link_url":@"http://www.cdhhrs.com"}
+                                        ]
+                               };
+        [self handleHornData:data completion:^{
+            if(completion)
+            {
+                completion();
+            }
+        }]; 
+        
+        return;
+        //----------------
+        
+        
+        
+        
+        if(completion)
+        {
+            completion();
+        }
+    }];
+}
+
+- (void)handleHornData:(NSDictionary*)data completion:(void(^)(void))completion
+{
+    if(!DICTIONARYVALID(data)) return;
+    if(!NICEDATA(data)) return;
+    
+    //拿到小喇叭数据数组
+    NSArray *arrays = [data objectForKey:@"data"];
+    
+    //做小喇叭楼层
+    [_contentTable insertData:arrays useCell:@"HornCell" toIndexPath:RDIndexPath(0, 1)];
+    
+    //刷新页面
+    [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
+        
+        if(completion)
+        {
+            completion();
+        }
+    } ];
+}
+
+
+
+
+
+
 
 
 

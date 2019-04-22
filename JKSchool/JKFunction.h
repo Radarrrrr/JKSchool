@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface JKFunction : NSObject
 
@@ -20,6 +21,9 @@
 
 + (NSInteger)statusCodeFromData:(NSDictionary*)data; //从返回数据中获取状态码
 + (BOOL)checkStatusCodeOKForData:(NSDictionary*)data;//检查是否数据是合格的好数据，即是否status code为200
+
++ (void)makeupShadowOnView:(UIView*)hostView;   //给一个view添加阴影, PS: hostview必须是clear颜色
++ (void)addShadowToView:(UIView*)hostView;      //在一个view的下面添加阴影背景，PS：hostview必须先有superview
 
 @end
 

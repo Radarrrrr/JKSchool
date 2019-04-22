@@ -74,7 +74,7 @@
     
     
     //判断本地登录状态
-    [self performSelector:@selector(checkLoginStatus) withObject:nil afterDelay:1.5];
+    //[self performSelector:@selector(checkLoginStatus) withObject:nil afterDelay:1.5];
     
     return YES;
 }

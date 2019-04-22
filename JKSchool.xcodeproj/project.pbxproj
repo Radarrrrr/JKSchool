@@ -14,6 +14,8 @@
 		0C2CB73F2258FA60000AD904 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2CB73E2258FA60000AD904 /* LoginViewController.m */; };
 		0C2CB7422258FAAB000AD904 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2CB7412258FAAB000AD904 /* RegistViewController.m */; };
 		0C308D8B224C4A5E000763DD /* DDImagePageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C308D89224C4A5E000763DD /* DDImagePageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0C463AB6226E0FD100868AF1 /* CMSHornView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C463AB4226E0FD000868AF1 /* CMSHornView.m */; };
+		0C463AB9226E15C200868AF1 /* HornCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C463AB8226E15C200868AF1 /* HornCell.m */; };
 		0C627A1322339AFB00DEC534 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C627A1222339AFB00DEC534 /* AppDelegate.m */; };
 		0C627A1B22339AFD00DEC534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C627A1A22339AFD00DEC534 /* Assets.xcassets */; };
 		0C627A1E22339AFD00DEC534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C627A1C22339AFD00DEC534 /* LaunchScreen.storyboard */; };
@@ -43,6 +45,10 @@
 		0C2CB7412258FAAB000AD904 /* RegistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		0C308D89224C4A5E000763DD /* DDImagePageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDImagePageScrollView.m; sourceTree = "<group>"; };
 		0C308D8A224C4A5E000763DD /* DDImagePageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDImagePageScrollView.h; sourceTree = "<group>"; };
+		0C463AB4226E0FD000868AF1 /* CMSHornView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSHornView.m; sourceTree = "<group>"; };
+		0C463AB5226E0FD000868AF1 /* CMSHornView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSHornView.h; sourceTree = "<group>"; };
+		0C463AB7226E15C200868AF1 /* HornCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HornCell.h; sourceTree = "<group>"; };
+		0C463AB8226E15C200868AF1 /* HornCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HornCell.m; sourceTree = "<group>"; };
 		0C627A0E22339AFB00DEC534 /* JKSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C627A1122339AFB00DEC534 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0C627A1222339AFB00DEC534 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		0C308D87224C4A5E000763DD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0C463AB3226E0FD000868AF1 /* CMSHornView */,
 				0C1E788522585DC30036A4E3 /* DDTimer */,
 				0C1E787E22585D3F0036A4E3 /* DDURLImageView */,
 				0C308D88224C4A5E000763DD /* DDImagePageScrollView */,
@@ -140,6 +147,15 @@
 				0C308D89224C4A5E000763DD /* DDImagePageScrollView.m */,
 			);
 			path = DDImagePageScrollView;
+			sourceTree = "<group>";
+		};
+		0C463AB3226E0FD000868AF1 /* CMSHornView */ = {
+			isa = PBXGroup;
+			children = (
+				0C463AB5226E0FD000868AF1 /* CMSHornView.h */,
+				0C463AB4226E0FD000868AF1 /* CMSHornView.m */,
+			);
+			path = CMSHornView;
 			sourceTree = "<group>";
 		};
 		0C627A0522339AFB00DEC534 = {
@@ -215,6 +231,8 @@
 		0C627A372233A5EB00DEC534 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0C463AB7226E15C200868AF1 /* HornCell.h */,
+				0C463AB8226E15C200868AF1 /* HornCell.m */,
 				0C1E788A225867420036A4E3 /* SampleCell.h */,
 				0C1E7889225867420036A4E3 /* SampleCell.m */,
 				0CF05B022237E4D00076F932 /* ScrollCell.h */,
@@ -333,6 +351,7 @@
 				0C627A2122339AFD00DEC534 /* main.m in Sources */,
 				0C308D8B224C4A5E000763DD /* DDImagePageScrollView.m in Sources */,
 				0C627A1322339AFB00DEC534 /* AppDelegate.m in Sources */,
+				0C463AB6226E0FD100868AF1 /* CMSHornView.m in Sources */,
 				0C627A432233A7B600DEC534 /* MineViewController.m in Sources */,
 				0CE5BF552258ACF800300C20 /* DDCenter.m in Sources */,
 				0C8D2D5222366303004754D5 /* JKFunction.m in Sources */,
@@ -341,6 +360,7 @@
 				0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */,
 				0C1E788822585DC30036A4E3 /* DDTimer.m in Sources */,
 				0C627A3A2233A60B00DEC534 /* HomeViewController.m in Sources */,
+				0C463AB9226E15C200868AF1 /* HornCell.m in Sources */,
 				0C1E788422585D3F0036A4E3 /* DDURLImageView.m in Sources */,
 				0C2CB7422258FAAB000AD904 /* RegistViewController.m in Sources */,
 				0C2CB73F2258FA60000AD904 /* LoginViewController.m in Sources */,

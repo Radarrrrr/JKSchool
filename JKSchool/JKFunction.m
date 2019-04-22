@@ -75,5 +75,40 @@
     return NO;
 }
 
++ (void)makeupShadowOnView:(UIView*)hostView
+{
+    //更新阴影状态
+    CALayer *layer = hostView.layer;
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:layer.bounds];
+    layer.shadowPath = path.CGPath;
+    layer.shadowColor = [UIColor blackColor].CGColor;
+    layer.shadowOffset = CGSizeZero;
+    layer.shadowOpacity = 0.2;
+    layer.shadowRadius = 3;
+}
+
++ (void)addShadowToView:(UIView*)hostView
+{
+    if(!hostView) return;
+    if(![hostView superview]) return;
+    
+    CGRect hrect = hostView.frame;
+    
+    float x = hrect.origin.x;
+    float y = hrect.origin.y;
+    float w = hrect.size.width;
+    float h = hrect.size.height;
+    
+    //shadow 位置：上1，左右2，下3
+    UIView *shadow = [[UIView alloc] initWithFrame:CGRectMake(x+1, y+2, w-2, h-2)];
+    shadow.backgroundColor = [UIColor clearColor];
+    shadow.userInteractionEnabled = NO;
+    [JKFunction makeupShadowOnView:shadow];
+    
+    //放在host下面
+    [hostView.superview insertSubview:shadow belowSubview:hostView];
+    
+}
+
 
 @end

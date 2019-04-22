@@ -30,11 +30,11 @@
 
 
 //接口宏设定
-#define API_PREFIX      @"http://testapi.cdhhrs.com" //接口地址
+#define API_PREFIX       @"http://testapi.cdhhrs.com"    //接口地址
 
-#define ACTION_ROTATES  @"/advertise/rotates"    //轮播广告
+#define ACTION_ROTATES   @"/advertise/rotates"           //轮播广告
 
-
+#define ACTION_MESSAGES  @"/user/notifications"          //用户消息中心
 
  
 
