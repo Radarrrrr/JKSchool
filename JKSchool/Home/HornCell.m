@@ -29,7 +29,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //add hornView
-    self.hornView = [[CMSHornView alloc] initWithFrame:CGRectMake(20, 8, SCR_WIDTH-40, 44)];
+    self.hornView = [[CMSHornView alloc] initWithFrame:CGRectMake(10, 8, SCR_WIDTH-20, 44)];
     _hornView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:_hornView];
     

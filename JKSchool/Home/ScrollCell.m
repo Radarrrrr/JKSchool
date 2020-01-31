@@ -29,10 +29,10 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //add _circleView
-    float w = SCR_WIDTH-40;
+    float w = SCR_WIDTH-20;
     float h = (120.0/335.0)*w;
     
-    self.circleView = [[DDImagePageScrollView alloc] initWithFrame:CGRectMake(20, 0, w, h)];
+    self.circleView = [[DDImagePageScrollView alloc] initWithFrame:CGRectMake(10, 0, w, h)];
     _circleView.backgroundColor = [UIColor clearColor];
     _circleView.delegate = self;
     _circleView.roundRectEnabled = YES;
@@ -89,7 +89,7 @@
         [_circleView refreshPagesForImageURLs:urls startIndex:0];
     }
     
-    float w = SCR_WIDTH-40;
+    float w = SCR_WIDTH-20;
     float h = (120.0/335.0)*w;
     
     return [NSNumber numberWithFloat:h];

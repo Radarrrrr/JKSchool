@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"健康校园";
+    self.navigationItem.title = @"首页";
     
     //创建背景 高125
     UIImageView *backView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, AT(125))];
@@ -44,17 +44,18 @@
     [self.view addSubview:_contentTable];
     
     //设定header和footer的view
-    UIView *hview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, 50)];
+    UIView *hview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, 10)];
     hview.backgroundColor = [UIColor clearColor];
     [_contentTable setSection:0 headerView:hview footerView:nil];
     
     //[_contentTable appendData:@"这时第1段" useCell:@"ScrollCell" toSection:0];
-
-
-
+    
+    
+    //添加用户头像和班级
+    [self addUserInfos];
     
     //创建用户条
-    [self addUserBanner];
+    //[self addUserBanner];
     
     
     //启动数据读取
@@ -73,7 +74,7 @@
 - (void)engineStartLoading
 {
     //读取用户banner数据
-    [self loadingUserBanner];
+    [self loadingUserInfos];
     
     //读取轮播图楼层
     [self loadingCircleScroll:^{
@@ -105,48 +106,89 @@
 
 
 #pragma mark - 用户信息楼层
-- (void)addUserBanner
-{    
-    //容器条
-    UIView *userView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, 50)];
-    userView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:userView];
-    [self.view bringSubviewToFront:userView];
+- (void)addUserInfos
+{
+    //添加用户头像ITEM
+    UIButton *faceBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    faceBtn.frame = CGRectMake(0, 0, 120, 44);
+    faceBtn.backgroundColor = [UIColor clearColor];
+    [faceBtn addTarget:self action:@selector(callCategroyLayer) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *faceItem = [[UIBarButtonItem alloc] initWithCustomView:faceBtn];
+    self.navigationItem.leftBarButtonItem = faceItem;
     
     //添加头像
-    self.faceView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 30, 30)];
-    [RDFunction addRadiusToView:_faceView radius:15];
-    [userView addSubview:_faceView];
+    self.faceView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    _faceView.userInteractionEnabled = NO;
+    [RDFunction addRadiusToView:_faceView radius:20];
+    [RDFunction addBorderToView:_faceView color:RGBS(220) lineWidth:1];
+    [faceBtn addSubview:_faceView];
     
     //添加姓名
-    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_faceView.frame)+10, 15, 200, 20)];
+    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 10, 80, 20)];
     _nameLabel.backgroundColor = [UIColor clearColor];
     _nameLabel.userInteractionEnabled = NO;
-    _nameLabel.textColor = [UIColor whiteColor];
+    _nameLabel.textColor = COLOR_TEXT_A;
     _nameLabel.textAlignment = NSTextAlignmentLeft;
     _nameLabel.font = FONT(14);
-    [userView addSubview:_nameLabel];
+    [faceBtn addSubview:_nameLabel];
+
     
-    //滑层按钮
-    self.cateBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    _cateBtn.frame = CGRectMake(VIEW_WIDTH-20-20, 15, 20, 20);
-    [_cateBtn setBackgroundImage:IMAGE(@"icon_category") forState:UIControlStateNormal];
-    [_cateBtn addTarget:self action:@selector(callCategroyLayer) forControlEvents:UIControlEventTouchUpInside];
-    [userView addSubview:_cateBtn];
-    
-    //班级
-    self.classLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(_cateBtn.frame)-100-10, 15, 100, 20)];
+    //添加班级ITEM
+    self.classLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
     _classLabel.backgroundColor = [UIColor blackColor];
-    _classLabel.alpha = 0.5;
+    _classLabel.alpha = 0.20;
     _classLabel.userInteractionEnabled = NO;
     _classLabel.textColor = [UIColor whiteColor];
     _classLabel.textAlignment = NSTextAlignmentCenter;
     _classLabel.font = FONT(14);
     [RDFunction addRadiusToView:_classLabel radius:10];
-    [userView addSubview:_classLabel];
+    
+    UIBarButtonItem *classItem = [[UIBarButtonItem alloc] initWithCustomView:_classLabel];
+    self.navigationItem.rightBarButtonItem = classItem;
+    
 }
+//- (void)addUserBanner
+//{
+//    //容器条
+//    UIView *userView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, 50)];
+//    userView.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:userView];
+//    [self.view bringSubviewToFront:userView];
+//
+//    //添加头像
+//    self.faceView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 30, 30)];
+//    [RDFunction addRadiusToView:_faceView radius:15];
+//    [userView addSubview:_faceView];
+//
+//    //添加姓名
+//    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_faceView.frame)+10, 15, 200, 20)];
+//    _nameLabel.backgroundColor = [UIColor clearColor];
+//    _nameLabel.userInteractionEnabled = NO;
+//    _nameLabel.textColor = [UIColor whiteColor];
+//    _nameLabel.textAlignment = NSTextAlignmentLeft;
+//    _nameLabel.font = FONT(14);
+//    [userView addSubview:_nameLabel];
+//
+//    //滑层按钮
+//    self.cateBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    _cateBtn.frame = CGRectMake(VIEW_WIDTH-20-20, 15, 20, 20);
+//    [_cateBtn setBackgroundImage:IMAGE(@"icon_category") forState:UIControlStateNormal];
+//    [_cateBtn addTarget:self action:@selector(callCategroyLayer) forControlEvents:UIControlEventTouchUpInside];
+//    [userView addSubview:_cateBtn];
+//
+//    //班级
+//    self.classLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(_cateBtn.frame)-100-10, 15, 100, 20)];
+//    _classLabel.backgroundColor = [UIColor blackColor];
+//    _classLabel.alpha = 0.5;
+//    _classLabel.userInteractionEnabled = NO;
+//    _classLabel.textColor = [UIColor whiteColor];
+//    _classLabel.textAlignment = NSTextAlignmentCenter;
+//    _classLabel.font = FONT(14);
+//    [RDFunction addRadiusToView:_classLabel radius:10];
+//    [userView addSubview:_classLabel];
+//}
 
-- (void)loadingUserBanner
+- (void)loadingUserInfos
 {
     /*
     {
