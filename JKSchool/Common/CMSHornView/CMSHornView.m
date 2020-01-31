@@ -47,6 +47,9 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    //如果是从后一页面倒回来的，就不刷新了
+    if(ARRAYVALID(self.subviews)) return;
+        
     if(!_hornDatas || [_hornDatas count] == 0) 
     {
         //如果小喇叭没数据，那么就隐藏

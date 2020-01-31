@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"首页";
+    //self.navigationItem.title = @"首页";
     
     //创建背景 高125
     UIImageView *backView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, AT(125))];
@@ -117,14 +117,14 @@
     self.navigationItem.leftBarButtonItem = faceItem;
     
     //添加头像
-    self.faceView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    self.faceView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 2, 36, 36)];
     _faceView.userInteractionEnabled = NO;
-    [RDFunction addRadiusToView:_faceView radius:20];
+    [RDFunction addRadiusToView:_faceView radius:18];
     [RDFunction addBorderToView:_faceView color:RGBS(220) lineWidth:1];
     [faceBtn addSubview:_faceView];
     
     //添加姓名
-    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 10, 80, 20)];
+    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 12, 80, 20)];
     _nameLabel.backgroundColor = [UIColor clearColor];
     _nameLabel.userInteractionEnabled = NO;
     _nameLabel.textColor = COLOR_TEXT_A;
