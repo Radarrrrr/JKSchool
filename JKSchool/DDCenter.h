@@ -15,6 +15,19 @@
  topic://id=x                       //跳转到专题页
  login://
  
+ studentdoc://               //学生档案模块
+ leavemanage://              //请假管理模块
+ healthdata://               //健康数据模块
+ schooldesc://               //学校简介模块
+ teachermanage://            //老师管理
+ studentmanage://            //学生管理
+ alarmmsg://                 //预警信息      
+ checking://                 //晨午检
+ schedule://                 //课程表模块
+ activitynotice://           //活动通知模块
+ 
+ 
+ 
  
  //以下几个暂时保留以后可能用到
  qrscaner://                        //二维码扫描器

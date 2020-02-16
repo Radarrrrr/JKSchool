@@ -76,6 +76,17 @@
     //判断本地登录状态
     //[self performSelector:@selector(checkLoginStatus) withObject:nil afterDelay:1.5];
     
+    
+    
+    //test--做个假数据已经登陆了
+    HHUser *user = [[HHUser alloc] init];
+    user.uid = @"12345";
+    user.name = @"张慧仪";
+    user.type = @"TEACHER"; //用户身份类别 -> PARENTS，TEACHER，or more
+    [[UserInfo sharedInfo] saveUser:user]; 
+    //-------------------------
+    
+    
     return YES;
 }
 
@@ -110,13 +121,16 @@
 
 - (void)checkLoginStatus
 {
-    //从本地userdefault里边获取登录状态
-    
-    //如果已经登陆，直接进入首页
-    
-    //如果未登录，呼叫登陆页
-    [DDCenter actionForLinkURL:@"login://"];
-    
+    //从本地userdefault里边获取登录状态    
+    if([UserInfo sharedInfo].curUser)
+    {
+        //如果已经登陆，直接进入首页
+    }
+    else
+    {
+        //如果未登录，呼叫登陆页
+        [DDCenter actionForLinkURL:@"login://"];
+    }
 }
 
 

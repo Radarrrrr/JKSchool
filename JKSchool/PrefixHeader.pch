@@ -20,6 +20,8 @@
 #import "RDNetService.h"
 #import "RDTableView.h"
 #import "RDWebViewController.h"
+#import "UIImageView+URLImage.h"
+#import "UserInfo.h"
 
 
 #endif /* PrefixHeader_pch */

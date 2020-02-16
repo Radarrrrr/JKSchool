@@ -27,6 +27,11 @@
 		0C8D2D5222366303004754D5 /* JKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D2D5122366303004754D5 /* JKFunction.m */; };
 		0CE5BF552258ACF800300C20 /* DDCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5BF532258ACF700300C20 /* DDCenter.m */; };
 		0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF05B032237E4D00076F932 /* ScrollCell.m */; };
+		2FA8522B23F58A2B0052379D /* RDIconsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8522523F58A2B0052379D /* RDIconsView.m */; };
+		2FA8522C23F58A2B0052379D /* RDSlidePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8522723F58A2B0052379D /* RDSlidePageControl.m */; };
+		2FA8522D23F58A2B0052379D /* UIImageView+URLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8522A23F58A2B0052379D /* UIImageView+URLImage.m */; };
+		2FFEC2E123F83DD400F923DC /* IconsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEC2DF23F83DD300F923DC /* IconsCell.m */; };
+		2FFEC2E423F8451200F923DC /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEC2E323F8451200F923DC /* UserInfo.m */; };
 		B651A235D171D7FBE139DF46 /* libPods-JKSchool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +78,16 @@
 		0CF05B022237E4D00076F932 /* ScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollCell.h; sourceTree = "<group>"; };
 		0CF05B032237E4D00076F932 /* ScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollCell.m; sourceTree = "<group>"; };
 		14B747BD835948A13312CD33 /* Pods-JKSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.release.xcconfig"; sourceTree = "<group>"; };
+		2FA8522423F58A2B0052379D /* RDIconsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDIconsView.h; sourceTree = "<group>"; };
+		2FA8522523F58A2B0052379D /* RDIconsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDIconsView.m; sourceTree = "<group>"; };
+		2FA8522623F58A2B0052379D /* RDSlidePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSlidePageControl.h; sourceTree = "<group>"; };
+		2FA8522723F58A2B0052379D /* RDSlidePageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSlidePageControl.m; sourceTree = "<group>"; };
+		2FA8522923F58A2B0052379D /* UIImageView+URLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URLImage.h"; sourceTree = "<group>"; };
+		2FA8522A23F58A2B0052379D /* UIImageView+URLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URLImage.m"; sourceTree = "<group>"; };
+		2FFEC2DF23F83DD300F923DC /* IconsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconsCell.m; sourceTree = "<group>"; };
+		2FFEC2E023F83DD400F923DC /* IconsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconsCell.h; sourceTree = "<group>"; };
+		2FFEC2E223F8451200F923DC /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		2FFEC2E323F8451200F923DC /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		E4FCE38072383688F6346AD2 /* Pods-JKSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.debug.xcconfig"; sourceTree = "<group>"; };
 		F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKSchool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +140,8 @@
 				0C2CB73E2258FA60000AD904 /* LoginViewController.m */,
 				0C2CB7402258FAAB000AD904 /* RegistViewController.h */,
 				0C2CB7412258FAAB000AD904 /* RegistViewController.m */,
+				2FFEC2E223F8451200F923DC /* UserInfo.h */,
+				2FFEC2E323F8451200F923DC /* UserInfo.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -132,6 +149,8 @@
 		0C308D87224C4A5E000763DD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2FA8522823F58A2B0052379D /* Category */,
+				2FA8522323F58A2B0052379D /* RDIconsView */,
 				0C463AB3226E0FD000868AF1 /* CMSHornView */,
 				0C1E788522585DC30036A4E3 /* DDTimer */,
 				0C1E787E22585D3F0036A4E3 /* DDURLImageView */,
@@ -193,9 +212,9 @@
 				0C8D2D5022366303004754D5 /* JKFunction.h */,
 				0C8D2D5122366303004754D5 /* JKFunction.m */,
 				0C627A1A22339AFD00DEC534 /* Assets.xcassets */,
-				0C627A1C22339AFD00DEC534 /* LaunchScreen.storyboard */,
 				0C8D2D4B2236378C004754D5 /* PrefixHeader.pch */,
 				0C627A1F22339AFD00DEC534 /* Info.plist */,
+				0C627A1C22339AFD00DEC534 /* LaunchScreen.storyboard */,
 				0C627A2022339AFD00DEC534 /* main.m */,
 			);
 			path = JKSchool;
@@ -231,6 +250,8 @@
 		0C627A372233A5EB00DEC534 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2FFEC2E023F83DD400F923DC /* IconsCell.h */,
+				2FFEC2DF23F83DD300F923DC /* IconsCell.m */,
 				0C463AB7226E15C200868AF1 /* HornCell.h */,
 				0C463AB8226E15C200868AF1 /* HornCell.m */,
 				0C1E788A225867420036A4E3 /* SampleCell.h */,
@@ -241,6 +262,26 @@
 				0C627A392233A60B00DEC534 /* HomeViewController.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		2FA8522323F58A2B0052379D /* RDIconsView */ = {
+			isa = PBXGroup;
+			children = (
+				2FA8522423F58A2B0052379D /* RDIconsView.h */,
+				2FA8522523F58A2B0052379D /* RDIconsView.m */,
+				2FA8522623F58A2B0052379D /* RDSlidePageControl.h */,
+				2FA8522723F58A2B0052379D /* RDSlidePageControl.m */,
+			);
+			path = RDIconsView;
+			sourceTree = "<group>";
+		};
+		2FA8522823F58A2B0052379D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2FA8522923F58A2B0052379D /* UIImageView+URLImage.h */,
+				2FA8522A23F58A2B0052379D /* UIImageView+URLImage.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		A988E32387995A262F768A84 /* Frameworks */ = {
@@ -354,15 +395,20 @@
 				0C463AB6226E0FD100868AF1 /* CMSHornView.m in Sources */,
 				0C627A432233A7B600DEC534 /* MineViewController.m in Sources */,
 				0CE5BF552258ACF800300C20 /* DDCenter.m in Sources */,
+				2FFEC2E423F8451200F923DC /* UserInfo.m in Sources */,
+				2FA8522B23F58A2B0052379D /* RDIconsView.m in Sources */,
 				0C8D2D5222366303004754D5 /* JKFunction.m in Sources */,
 				0C1E788B225867420036A4E3 /* SampleCell.m in Sources */,
 				0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */,
+				2FA8522C23F58A2B0052379D /* RDSlidePageControl.m in Sources */,
 				0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */,
 				0C1E788822585DC30036A4E3 /* DDTimer.m in Sources */,
 				0C627A3A2233A60B00DEC534 /* HomeViewController.m in Sources */,
+				2FA8522D23F58A2B0052379D /* UIImageView+URLImage.m in Sources */,
 				0C463AB9226E15C200868AF1 /* HornCell.m in Sources */,
 				0C1E788422585D3F0036A4E3 /* DDURLImageView.m in Sources */,
 				0C2CB7422258FAAB000AD904 /* RegistViewController.m in Sources */,
+				2FFEC2E123F83DD400F923DC /* IconsCell.m in Sources */,
 				0C2CB73F2258FA60000AD904 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

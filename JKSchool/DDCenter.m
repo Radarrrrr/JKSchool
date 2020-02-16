@@ -118,6 +118,7 @@
 + (void)actionForLinkURL:(NSString*)linkURL
 {
     if(!STRVALID(linkURL)) return;
+    NSLog(@"ACTION to linkURL: %@", linkURL);
     
     AppDelegate *appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     UINavigationController *navController  = (UINavigationController *)appDele.mainTabBar.selectedViewController;

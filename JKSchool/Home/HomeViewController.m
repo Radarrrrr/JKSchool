@@ -74,7 +74,7 @@
 - (void)engineStartLoading
 {
     //读取用户banner数据
-    [self loadingUserInfos];
+    [self loadingUserInfos];  
     
     //读取轮播图楼层
     [self loadingCircleScroll:^{
@@ -82,9 +82,13 @@
         //读取小喇叭楼层
         [self loadingHorn:^{
             
-            //处理下个楼层业务
-            //...
-            
+            //设定icon入口区楼层
+            [self loadingIcons:^{
+                
+                //处理下个楼层业务
+                //...
+                
+            }];
             
         }];
 
@@ -401,10 +405,74 @@
 
 
 
+#pragma mark - icon区楼层
+- (void)loadingIcons:(void(^)(void))completion
+{
+    //根据身份权限不同，读取不同icons
+    //icons: [{"icon_img":"xxx", "icon_name":"xxx", "link_url":"xxxx"},...]   
+    NSArray *data = nil;
+    
+    HHUser *user = [UserInfo sharedInfo].curUser;
+    if(!user)
+    {
+        //没登录，只能看学校简介
+        data = @[@{@"icon_img":@"icon_school_desc", @"icon_name":@"学校简介", @"link_url":@"xxxx"}];
+    }
+    else
+    {
+        if([user.type isEqualToString:@"PARENTS"])
+        {
+            //家长身份
+            data = @[@{@"icon_img":@"icon_student_doc", @"icon_name":@"学生档案", @"link_url":@"studentdoc://"},
+                     @{@"icon_img":@"icon_leave_manage", @"icon_name":@"请假管理", @"link_url":@"leavemanage://"},
+                     @{@"icon_img":@"icon_health_data", @"icon_name":@"健康数据", @"link_url":@"healthdata://"},
+                     @{@"icon_img":@"icon_school_desc", @"icon_name":@"学校简介", @"link_url":@"schooldesc://"}
+                     ];
+        }
+        else if([user.type isEqualToString:@"TEACHER"])
+        {
+            //班主任身份
+            data = @[@{@"icon_img":@"icon_teacher_manage", @"icon_name":@"老师管理", @"link_url":@"teachermanage://"},
+                     @{@"icon_img":@"icon_student_manage", @"icon_name":@"学生管理", @"link_url":@"studentmanage://"},
+                     @{@"icon_img":@"icon_alarm_msg", @"icon_name":@"预警信息", @"link_url":@"alarmmsg://"},
+                     @{@"icon_img":@"icon_checking_mn", @"icon_name":@"晨午检", @"link_url":@"checking://"},
+                     @{@"icon_img":@"icon_leave_manage", @"icon_name":@"请假管理", @"link_url":@"leavemanage://"},
+                     @{@"icon_img":@"icon_health_data", @"icon_name":@"健康数据", @"link_url":@"healthdata://"},
+                     @{@"icon_img":@"icon_schedule", @"icon_name":@"课程表", @"link_url":@"schedule://"},
+                     @{@"icon_img":@"icon_activity_notice", @"icon_name":@"活动通知", @"link_url":@"activitynotice://"},
+                     @{@"icon_img":@"icon_school_desc", @"icon_name":@"学校简介", @"link_url":@"schooldesc://"}
+                     ];
+        }
+                
+        //TO DO: ...其他身份以后再添加
+    }
+    
+    //处理数据源
+    [self handleIconsData:data completion:^{
+        if(completion)
+        {
+            completion();
+        }
+    }];
+}
 
-
-
-
+- (void)handleIconsData:(NSArray*)data completion:(void(^)(void))completion
+{
+    //data: [{"icon_img":"xxx", "icon_name":"xxx", "link_url":"xxxx"},...]
+    if(!ARRAYVALID(data)) return;
+    
+    //做icons区楼层
+    [_contentTable insertData:data useCell:@"IconsCell" toIndexPath:RDIndexPath(0, 2)];
+    
+    //刷新页面
+    [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
+        
+        if(completion)
+        {
+            completion();
+        }
+    } ];
+}
 
 
 @end
