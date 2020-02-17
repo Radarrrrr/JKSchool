@@ -25,5 +25,10 @@
 + (void)makeupShadowOnView:(UIView*)hostView;   //给一个view添加阴影, PS: hostview必须是clear颜色
 + (void)addShadowToView:(UIView*)hostView;      //在一个view的下面添加阴影背景，PS：hostview必须先有superview
 
++ (float)downPosReferTo:(UIView*)view offset:(float)offset; //关联一个view的边缘，向下
++ (float)upPosReferTo:(UIView*)view offset:(float)offset; //关联一个view的边缘，向上
++ (float)leftPosReferTo:(UIView*)view offset:(float)offset; //关联一个view的边缘，向左
++ (float)rightPosReferTo:(UIView*)view offset:(float)offset; //关联一个view的边缘，向右
+
 @end
 

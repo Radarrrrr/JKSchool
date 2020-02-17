@@ -32,6 +32,7 @@
 		2FA8522D23F58A2B0052379D /* UIImageView+URLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8522A23F58A2B0052379D /* UIImageView+URLImage.m */; };
 		2FFEC2E123F83DD400F923DC /* IconsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEC2DF23F83DD300F923DC /* IconsCell.m */; };
 		2FFEC2E423F8451200F923DC /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEC2E323F8451200F923DC /* UserInfo.m */; };
+		2FFEC2E923FACED300F923DC /* LeaveManageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEC2E723FACED100F923DC /* LeaveManageCell.m */; };
 		B651A235D171D7FBE139DF46 /* libPods-JKSchool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		2FFEC2E023F83DD400F923DC /* IconsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconsCell.h; sourceTree = "<group>"; };
 		2FFEC2E223F8451200F923DC /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		2FFEC2E323F8451200F923DC /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		2FFEC2E723FACED100F923DC /* LeaveManageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaveManageCell.m; sourceTree = "<group>"; };
+		2FFEC2E823FACED200F923DC /* LeaveManageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaveManageCell.h; sourceTree = "<group>"; };
 		E4FCE38072383688F6346AD2 /* Pods-JKSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.debug.xcconfig"; sourceTree = "<group>"; };
 		F45E08A957570FB8C1315B5A /* libPods-JKSchool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKSchool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -250,6 +253,8 @@
 		0C627A372233A5EB00DEC534 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2FFEC2E823FACED200F923DC /* LeaveManageCell.h */,
+				2FFEC2E723FACED100F923DC /* LeaveManageCell.m */,
 				2FFEC2E023F83DD400F923DC /* IconsCell.h */,
 				2FFEC2DF23F83DD300F923DC /* IconsCell.m */,
 				0C463AB7226E15C200868AF1 /* HornCell.h */,
@@ -397,6 +402,7 @@
 				0CE5BF552258ACF800300C20 /* DDCenter.m in Sources */,
 				2FFEC2E423F8451200F923DC /* UserInfo.m in Sources */,
 				2FA8522B23F58A2B0052379D /* RDIconsView.m in Sources */,
+				2FFEC2E923FACED300F923DC /* LeaveManageCell.m in Sources */,
 				0C8D2D5222366303004754D5 /* JKFunction.m in Sources */,
 				0C1E788B225867420036A4E3 /* SampleCell.m in Sources */,
 				0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */,

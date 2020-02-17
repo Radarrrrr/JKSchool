@@ -110,5 +110,25 @@
     
 }
 
++ (float)downPosReferTo:(UIView*)view offset:(float)offset //关联一个view的边缘，向下
+{
+    if(!view) return 0.0;
+    return CGRectGetMaxY(view.frame)+offset;
+}
++ (float)upPosReferTo:(UIView*)view offset:(float)offset //关联一个view的边缘，向上
+{
+    if(!view) return 0.0;
+    return CGRectGetMinY(view.frame)-offset;
+}
++ (float)leftPosReferTo:(UIView*)view offset:(float)offset //关联一个view的边缘，向左
+{
+    if(!view) return 0.0;
+    return CGRectGetMinX(view.frame)-offset;
+}
++ (float)rightPosReferTo:(UIView*)view offset:(float)offset //关联一个view的边缘，向右
+{
+    if(!view) return 0.0;
+    return CGRectGetMaxX(view.frame)+offset;
+}
 
 @end

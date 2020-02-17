@@ -82,7 +82,7 @@
     HHUser *user = [[HHUser alloc] init];
     user.uid = @"12345";
     user.name = @"张慧仪";
-    user.type = @"TEACHER"; //用户身份类别 -> PARENTS，TEACHER，or more
+    user.type = @"PARENTS"; //用户身份类别 -> PARENTS，TEACHER，or more
     [[UserInfo sharedInfo] saveUser:user]; 
     //-------------------------
     

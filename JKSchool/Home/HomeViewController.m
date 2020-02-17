@@ -85,6 +85,34 @@
             //设定icon入口区楼层
             [self loadingIcons:^{
                 
+                //根据身份类型分支展示
+                HHUser *user = [UserInfo sharedInfo].curUser;
+                if([user.type isEqualToString:@"PARENTS"])
+                {
+                    //**家长身份**
+                    
+                    //设定请假管理楼层
+                    [self loadingLeaveManage:^{
+                        
+                        //读取通知楼层
+                        
+                    }];
+                    
+                    
+                    
+                }
+                else if([user.type isEqualToString:@"TEACHER"])
+                {
+                    //**班主任身份**
+                    
+                    //晨午检
+                    
+                    //学生审批
+                     
+                }
+                
+                
+                
                 //处理下个楼层业务
                 //...
                 
@@ -463,6 +491,40 @@
     
     //做icons区楼层
     [_contentTable insertData:data useCell:@"IconsCell" toIndexPath:RDIndexPath(0, 2)];
+    
+    //刷新页面
+    [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
+        
+        if(completion)
+        {
+            completion();
+        }
+    } ];
+}
+
+
+
+#pragma mark - 请假管理楼层
+- (void)loadingLeaveManage:(void(^)(void))completion
+{
+    //请假管理
+    //做一个空字典传入，因为RDTableview需要data不为nil
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+    
+    //处理数据源
+    [self handleLeaveManageData:data completion:^{
+        if(completion)
+        {
+            completion();
+        }
+    }];
+}
+
+- (void)handleLeaveManageData:(NSDictionary*)data completion:(void(^)(void))completion
+{
+    //data暂时先不需要可按nil处理
+    //做icons区楼层
+    [_contentTable insertData:data useCell:@"LeaveManageCell" toIndexPath:RDIndexPath(0, 3)];
     
     //刷新页面
     [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{

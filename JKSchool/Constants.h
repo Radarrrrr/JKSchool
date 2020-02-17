@@ -17,7 +17,7 @@
 
 #define COLOR(x) [RDFunction colorFromHexString:x] //16进制颜色(html颜色值)字符串转为UIColor 如：@"#3300ff"
 
-#define AT(x)           [JKFunction fixedPixel:x]           //把像素尺寸按设备不同等比例调整，基础尺寸为750x1334
+#define AT(x)           [JKFunction fixedPixel:x]           //把像素尺寸按设备不同等比例调整，基础尺寸为750x1334(iphone6)
 #define IMAGE(str)      [UIImage imageNamed:str]            //快速创建一个图片对象
 
 #define StatusCode(d)   [JKFunction statusCodeFromData:d]       //从返回数据中获取状态码, 返回值为 NSInteger 类型
@@ -26,7 +26,11 @@
 
 #define RequestUrlMake(action, parameter) [JKFunction assembleRequestUrl:action param:parameter] //目前只支持一个参数
 
-
+//与一个view绑定计算位置宏
+#define POS_D(v, o) [JKFunction downPosReferTo:v offset:o]  //计算view下面的偏移量o的位置数据
+#define POS_U(v, o) [JKFunction upPosReferTo:v offset:o]    //计算view上面的偏移量o的位置数据
+#define POS_L(v, o) [JKFunction leftPosReferTo:v offset:o]  //计算view左面的偏移量o的位置数据
+#define POS_R(v, o) [JKFunction rightPosReferTo:v offset:o] //计算view右面的偏移量o的位置数据
 
 
 //接口宏设定

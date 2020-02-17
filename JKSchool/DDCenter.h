@@ -16,7 +16,10 @@
  login://
  
  studentdoc://               //学生档案模块
- leavemanage://              //请假管理模块
+ leavemanage://                       //请假管理模块
+     leavemanage://type=leave              //请假管理-请假
+     leavemanage://type=supply             //请假管理-补充信息
+     leavemanage://type=interrupt          //请假管理-销假
  healthdata://               //健康数据模块
  schooldesc://               //学校简介模块
  teachermanage://            //老师管理
