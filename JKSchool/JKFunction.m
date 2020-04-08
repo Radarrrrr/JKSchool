@@ -131,4 +131,57 @@
     return CGRectGetMaxX(view.frame)+offset;
 }
 
+
++ (void)modifyFrameFor:(UIView *)view toX:(NSString *)x toY:(NSString *)y toW:(NSString *)w toH:(NSString*)h
+{
+    //修改一个view及其子类的frame，用于多次更改位置或大小，又不是每次所有属性全改的情况
+    //参数为用float类型的数据做成NSString类型输入，如果不需要改，就直接输入nil
+    if(!view) return;
+    if(!x && !y && !w && !h) return;
+    
+    CGRect nframe = view.frame;
+    if(x && ![x isEqualToString:@""])
+    {
+        nframe.origin.x = [x floatValue];
+    }
+    if(y && ![y isEqualToString:@""])
+    {
+        nframe.origin.y = [y floatValue];
+    }
+    if(w && ![w isEqualToString:@""])
+    {
+        nframe.size.width = [w floatValue];
+    }
+    if(h && ![h isEqualToString:@""])
+    {
+        nframe.size.height = [h floatValue];
+    }
+   
+    view.frame = nframe;
+}
+
+
++ (float)getHeightForString:(NSString *)string font:(UIFont *)font width:(float)width
+{    
+    if(!string || [string compare:@""] == NSOrderedSame) return 0.0;
+    
+    //段落设置与实际显示的 Label 属性一致 采用 NSMutableParagraphStyle 设置Nib 中 Label 的相关属性传入到 NSAttributeString 中计算；
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    style.lineBreakMode = NSLineBreakByWordWrapping;
+    style.alignment = NSTextAlignmentLeft;
+    
+    NSAttributedString *useString = [[NSAttributedString alloc]initWithString:string attributes:@{NSFontAttributeName:font, NSParagraphStyleAttributeName:style}];
+    
+    CGSize size =  [useString boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
+    //NSLog(@" size =  %@", NSStringFromCGSize(size));
+    
+    //计算出来的数据是小数，在应用到布局的时候稍微差一点点就不能保证按照计算时那样排列，所以为了确保布局按照我们计算的数据来，就在原来计算的基础上 取ceil值，再加1；
+    CGFloat height = ceil(size.height) + 1;
+    
+    return height;
+}
+
+
+
+
 @end

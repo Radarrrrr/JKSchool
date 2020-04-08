@@ -50,6 +50,7 @@
 }
 - (NSNumber*)setCellData:(id)data atIndexPath:(NSIndexPath*)indexPath
 {
+    //这个数据结构是旧的，暂时保留
 //[
 //    {
 //        id = 26;
@@ -68,25 +69,43 @@
 //    ...
 //]
     
+    //新的数据结构
+//    @[
+//      @{@"title":@"童话星球", 
+//        @"img":@"http://img63.ddimg.cn/2020/4/8/2020040816511645783.jpg", 
+//        @"link_url":@"http://baby.dangdang.com/20200327_w0xo"},
+//      @{@"title":@"巴拉巴拉8周年庆", 
+//        @"img":@"http://img63.ddimg.cn/2020/4/8/202004081634196146.jpg", 
+//        @"link_url":@"http://shop.dangdang.com/8603"},
+//      @{@"title":@"当当书香节", 
+//        @"img":@"http://img61.ddimg.cn/2020/4/8/2020040816504936034.jpg", 
+//        @"link_url":@"http://book.dangdang.com/20200327_z1h2"}
+//      ]
+    
+    
     //根据data设定cell上组件的属性，并返回计算以后的cell高度, 用number类型装进去，[重要]cell高度必须要做计算并返回，如果返回nil就使用默认的44高度了
-    if(ARRAYVALID(data))
+    
+    if(!ARRAYVALID(_circleView.imageURLs))
     {
-        self.dataArray = (NSArray*)data;
-        
-        NSMutableArray *urls = [[NSMutableArray alloc] init];
-        for(NSDictionary *dic in _dataArray)
+        if(ARRAYVALID(data))
         {
-            if(DICTIONARYVALID(dic))
+            self.dataArray = (NSArray*)data;
+            
+            NSMutableArray *urls = [[NSMutableArray alloc] init];
+            for(NSDictionary *dic in _dataArray)
             {
-                NSString *img_url = [dic objectForKey:@"img"];
-                if(STRVALID(img_url))
+                if(DICTIONARYVALID(dic))
                 {
-                    [urls addObject:img_url];
+                    NSString *img_url = [dic objectForKey:@"img"];
+                    if(STRVALID(img_url))
+                    {
+                        [urls addObject:img_url];
+                    }
                 }
             }
+            
+            [_circleView refreshPagesForImageURLs:urls startIndex:0];
         }
-        
-        [_circleView refreshPagesForImageURLs:urls startIndex:0];
     }
     
     float w = SCR_WIDTH-20;
@@ -100,12 +119,15 @@
 - (void)ddImagePageScrollViewDidTapInPage:(DDImagePageScrollView*)pageScrollView pageIndex:(NSInteger)index atPoint:(CGPoint)atPoint pageImage:(UIImage*)image pageImageURL:(NSString*)imageURL
 {
     NSDictionary *dict = [_dataArray objectAtIndex:index]; 
-    NSNumber *circleID = [dict objectForKey:@"id"];
     
-    NSString *circle_id = [circleID stringValue];
+//    NSNumber *circleID = [dict objectForKey:@"id"];
+//    NSString *circle_id = [circleID stringValue];
+//    
+//    //对接JKCenter直接跳转
+//    NSString *linkUrl = [NSString stringWithFormat:@"topic://id=%@", circle_id];
+//    [DDCenter actionForLinkURL:linkUrl];
     
-    //对接JKCenter直接跳转
-    NSString *linkUrl = [NSString stringWithFormat:@"topic://id=%@", circle_id];
+    NSString *linkUrl = [dict objectForKey:@"link_url"];
     [DDCenter actionForLinkURL:linkUrl];
 }
 

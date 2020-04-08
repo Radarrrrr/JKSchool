@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 
 
+static int queueNO = 0;
+
 @interface HomeViewController () <RDTableViewDelegate>
 
 @property (nonatomic, strong) RDTableView *contentTable;
@@ -16,7 +18,6 @@
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *classLabel;
 @property (nonatomic, strong) UIButton *cateBtn;
-
 
 @end
 
@@ -47,8 +48,6 @@
     UIView *hview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, 10)];
     hview.backgroundColor = [UIColor clearColor];
     [_contentTable setSection:0 headerView:hview footerView:nil];
-    
-    //[_contentTable appendData:@"这时第1段" useCell:@"ScrollCell" toSection:0];
     
     
     //添加用户头像和班级
@@ -95,11 +94,10 @@
                     [self loadingLeaveManage:^{
                         
                         //读取通知楼层
-                        
-                    }];
-                    
-                    
-                    
+                        [self loadingNotice:^{
+                            
+                        }];
+                    }];   
                 }
                 else if([user.type isEqualToString:@"TEACHER"])
                 {
@@ -323,6 +321,51 @@
         
     } failure:^(NSDictionary *errdic) {
         
+        //旧的数据结构，暂时保留
+            //        id = 26;
+            //        img = "https://www.cdhhrs.com/uploads/Advertise/20190218220408.jpg";
+            //        "small_img" = "https://www.cdhhrs.com/uploads/Advertise/thumb/20190218220408.jpg";
+            //        title = "\U5f00\U5b66\U90a3\U70b9\U4e8b\Uff1a\U4ece\U9884\U9632\U4f20\U67d3\U75c5\U5f00\U59cb";
+            //        weight = 96;
+            //    },
+            //    {
+            //        id = 22;
+            //        img = "https://www.cdhhrs.com/uploads/Advertise/20181207185438.png";
+            //        "small_img" = "https://www.cdhhrs.com/uploads/Advertise/thumb/20181207185438.png";
+            //        title = "\U627f\U5fb7\U5e02\U5b66\U6821\U548c\U6258\U5e7c\U673a\U6784\U4f20\U67d3\U75c5\U548c\U7a81\U53d1\U516c\U5171\U536b\U751f\U4e8b\U4ef6\U9632\U63a7\U5de5\U4f5c\U6307\U5357";
+            //        weight = 97;
+            //    },
+            
+            
+        //TO DO: 这里是测试数据，需要调试消息列表接口
+        //----------------测试的数据
+        NSDictionary *data = @{@"status_code":@"200",
+                               @"data":@[
+                                       @{@"title":@"童话星球", 
+                                         @"img":@"http://img63.ddimg.cn/2020/4/8/2020040816511645783.jpg", 
+                                         @"link_url":@"http://baby.dangdang.com/20200327_w0xo"},
+                                       @{@"title":@"巴拉巴拉8周年庆", 
+                                         @"img":@"http://img63.ddimg.cn/2020/4/8/202004081634196146.jpg", 
+                                         @"link_url":@"http://shop.dangdang.com/8603"},
+                                       @{@"title":@"当当书香节", 
+                                         @"img":@"http://img61.ddimg.cn/2020/4/8/2020040816504936034.jpg", 
+                                         @"link_url":@"http://book.dangdang.com/20200327_z1h2"}
+                                       ]
+                               };
+        
+        //处理轮播图数据
+        [self handleCircleData:data completion:^{
+            if(completion)
+            {
+                completion();
+            }
+        }];
+        
+        return;
+        //----------------
+            
+            
+            
         //处理数据读取失败提示
         if(completion)
         {
@@ -338,11 +381,13 @@
     if(!DICTIONARYVALID(data)) return;
     if(!NICEDATA(data)) return;
     
+    //拿出轮播图楼层数组
     NSArray *arrays = [data objectForKey:@"data"];
     //[_contentTable appendData:arrays useCell:@"ScrollCell" toSection:0];
     
     //填充数据
-    [_contentTable insertData:arrays useCell:@"ScrollCell" toIndexPath:RDIndexPath(0, 0)];
+    [_contentTable insertData:arrays useCell:@"ScrollCell" toIndexPath:RDIndexPath(0, queueNO)];
+    queueNO += 1;
     
     //刷新页面
     [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
@@ -419,7 +464,8 @@
     NSArray *arrays = [data objectForKey:@"data"];
     
     //做小喇叭楼层
-    [_contentTable insertData:arrays useCell:@"HornCell" toIndexPath:RDIndexPath(0, 1)];
+    [_contentTable insertData:arrays useCell:@"HornCell" toIndexPath:RDIndexPath(0, queueNO)];
+    queueNO += 1;
     
     //刷新页面
     [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
@@ -467,7 +513,7 @@
                      @{@"icon_img":@"icon_leave_manage", @"icon_name":@"请假管理", @"link_url":@"leavemanage://"},
                      @{@"icon_img":@"icon_health_data", @"icon_name":@"健康数据", @"link_url":@"healthdata://"},
                      @{@"icon_img":@"icon_schedule", @"icon_name":@"课程表", @"link_url":@"schedule://"},
-                     @{@"icon_img":@"icon_activity_notice", @"icon_name":@"活动通知", @"link_url":@"activitynotice://"},
+                     @{@"icon_img":@"icon_notice", @"icon_name":@"活动通知", @"link_url":@"notice://"},
                      @{@"icon_img":@"icon_school_desc", @"icon_name":@"学校简介", @"link_url":@"schooldesc://"}
                      ];
         }
@@ -490,7 +536,8 @@
     if(!ARRAYVALID(data)) return;
     
     //做icons区楼层
-    [_contentTable insertData:data useCell:@"IconsCell" toIndexPath:RDIndexPath(0, 2)];
+    [_contentTable insertData:data useCell:@"IconsCell" toIndexPath:RDIndexPath(0, queueNO)];
+    queueNO += 1;
     
     //刷新页面
     [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
@@ -524,7 +571,8 @@
 {
     //data暂时先不需要可按nil处理
     //做icons区楼层
-    [_contentTable insertData:data useCell:@"LeaveManageCell" toIndexPath:RDIndexPath(0, 3)];
+    [_contentTable insertData:data useCell:@"LeaveManageCell" toIndexPath:RDIndexPath(0, queueNO)];
+    queueNO += 1;
     
     //刷新页面
     [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
@@ -535,6 +583,69 @@
         }
     } ];
 }
+
+
+
+#pragma mark - 学校通知楼层
+- (void)loadingNotice:(void(^)(void))completion
+{
+    //通知楼层
+    NSMutableArray *data = [[NSMutableArray alloc] init];
+    
+    
+    //test---模拟数据
+    NSArray *testdata = @[
+                          @{@"id":@"1", 
+                           @"title":@"春节放假通知", 
+                           @"content":@"春节春节放假通知春节放假通知春节放假通知春节放假通知春节放假通知放假通知", 
+                           @"school":@"双桥区东方星民族艺术教育幼儿园",
+                           @"time":@"2019-01-01"
+                           },
+                          @{@"id":@"2", 
+                            @"title":@"有意义的寒假", 
+                            @"content":@"过一个有意义的寒假", 
+                            @"school":@"承德市第一中学",
+                            @"time":@"2019-01-01"
+                            },
+                          @{@"id":@"3", 
+                            @"title":@"今年春天很温暖", 
+                            @"content":@"春节春节放假通知春节放假通知春节放节放假通知春节放假通知春节放假通知放假通知节放假通知春节放假通知春节放假通知放假通知节放假通知春节放假通知春节放假通知放假通知假通知春节放假通知春节放假通知放假通知", 
+                            @"school":@"金色摇篮幼儿园",
+                            @"time":@"2019-01-01"
+                            }
+                         ];
+    [data setArray:testdata];
+    //-------------
+     
+    
+    
+    //处理数据源
+    [self handleNoticeData:data completion:^{
+        if(completion)
+        {
+            completion();
+        }
+    }];
+}
+
+- (void)handleNoticeData:(NSArray*)data completion:(void(^)(void))completion
+{
+    //data暂时先不需要可按nil处理
+    //做icons区楼层
+    [_contentTable insertData:data useCell:@"NoticeCell" toIndexPath:RDIndexPath(0, queueNO)];
+    queueNO += 1;
+    
+    //刷新页面
+    [self->_contentTable refreshTableWithAnimation:UITableViewRowAnimationFade completion:^{
+        
+        if(completion)
+        {
+            completion();
+        }
+    } ];
+}
+
+
 
 
 @end

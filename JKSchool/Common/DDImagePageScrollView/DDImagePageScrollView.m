@@ -15,7 +15,6 @@
 @interface DDImagePageScrollView ()
 
 @property (nonatomic) NSInteger currentScrollIndex;  //当前scrollview中页面的index
-@property (nonatomic, retain) NSArray *imageURLs;
 @property (nonatomic, retain) NSMutableArray *pages;
 
 - (void)updatePageForScrollIndex:(NSInteger)scrollIndex;

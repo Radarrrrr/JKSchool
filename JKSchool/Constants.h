@@ -23,6 +23,7 @@
 #define StatusCode(d)   [JKFunction statusCodeFromData:d]       //从返回数据中获取状态码, 返回值为 NSInteger 类型
 #define NICEDATA(d)     [JKFunction checkStatusCodeOKForData:d] //检测返回的数据是否是合理数据
 
+#define STR_F(x) [NSString stringWithFormat:@"%f", x]   //从float类型直接做一个string类型
 
 #define RequestUrlMake(action, parameter) [JKFunction assembleRequestUrl:action param:parameter] //目前只支持一个参数
 

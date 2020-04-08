@@ -16,7 +16,7 @@
  login://
  
  studentdoc://               //学生档案模块
- leavemanage://                       //请假管理模块
+ leavemanage://                            //请假管理模块
      leavemanage://type=leave              //请假管理-请假
      leavemanage://type=supply             //请假管理-补充信息
      leavemanage://type=interrupt          //请假管理-销假
@@ -27,8 +27,8 @@
  alarmmsg://                 //预警信息      
  checking://                 //晨午检
  schedule://                 //课程表模块
- activitynotice://           //活动通知模块
- 
+ notice://                          //活动通知模块（全部）
+    notice://id=xxx                 //具体通知页面
  
  
  

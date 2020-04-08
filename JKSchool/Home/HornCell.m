@@ -30,11 +30,11 @@
     
     //add hornView
     self.hornView = [[CMSHornView alloc] initWithFrame:CGRectMake(10, 8, SCR_WIDTH-20, 44)];
-    _hornView.backgroundColor = [UIColor whiteColor];
+    _hornView.backgroundColor = RGBS(250);//[UIColor whiteColor];
     [self.contentView addSubview:_hornView];
     
     [RDFunction addRadiusToView:_hornView radius:6];
-    [JKFunction addShadowToView:_hornView];
+    //[JKFunction addShadowToView:_hornView];
     
 }
 
@@ -43,7 +43,7 @@
     //根据data设定cell上组件的属性，并返回计算以后的cell高度, 用number类型装进去，[重要]cell高度必须要做计算并返回，如果返回nil就使用默认的44高度了
     _hornView.hornDatas = data;
     
-    return [NSNumber numberWithFloat:52];
+    return [NSNumber numberWithFloat:60];
 }
 
 

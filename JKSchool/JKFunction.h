@@ -30,5 +30,14 @@
 + (float)leftPosReferTo:(UIView*)view offset:(float)offset; //关联一个view的边缘，向左
 + (float)rightPosReferTo:(UIView*)view offset:(float)offset; //关联一个view的边缘，向右
 
+//修改一个view及其子类的frame，用于多次更改位置或大小，又不是每次所有属性全改的情况
+//参数为用float类型的数据做成NSString类型输入，如果不需要改，就直接输入nil，配合STR_F(x)宏输入参数，更便捷
++ (void)modifyFrameFor:(UIView *)view toX:(NSString *)x toY:(NSString *)y toW:(NSString *)w toH:(NSString*)h;
+    
+
+
+//根据字符串的字体和显示宽度，计算总体要显示的高度
++ (float)getHeightForString:(NSString *)string font:(UIFont *)font width:(float)width;
+    
 @end
 

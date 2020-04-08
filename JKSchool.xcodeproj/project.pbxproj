@@ -27,6 +27,8 @@
 		0C8D2D5222366303004754D5 /* JKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D2D5122366303004754D5 /* JKFunction.m */; };
 		0CE5BF552258ACF800300C20 /* DDCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5BF532258ACF700300C20 /* DDCenter.m */; };
 		0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF05B032237E4D00076F932 /* ScrollCell.m */; };
+		2F92681F23FBD5E400311624 /* NoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F92681E23FBD5E400311624 /* NoticeCell.m */; };
+		2F92682223FE4D5500311624 /* NoticeCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F92682123FE4D5500311624 /* NoticeCard.m */; };
 		2FA8522B23F58A2B0052379D /* RDIconsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8522523F58A2B0052379D /* RDIconsView.m */; };
 		2FA8522C23F58A2B0052379D /* RDSlidePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8522723F58A2B0052379D /* RDSlidePageControl.m */; };
 		2FA8522D23F58A2B0052379D /* UIImageView+URLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8522A23F58A2B0052379D /* UIImageView+URLImage.m */; };
@@ -79,6 +81,10 @@
 		0CF05B022237E4D00076F932 /* ScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollCell.h; sourceTree = "<group>"; };
 		0CF05B032237E4D00076F932 /* ScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollCell.m; sourceTree = "<group>"; };
 		14B747BD835948A13312CD33 /* Pods-JKSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKSchool/Pods-JKSchool.release.xcconfig"; sourceTree = "<group>"; };
+		2F92681D23FBD5E400311624 /* NoticeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeCell.h; sourceTree = "<group>"; };
+		2F92681E23FBD5E400311624 /* NoticeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeCell.m; sourceTree = "<group>"; };
+		2F92682023FE4D5500311624 /* NoticeCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeCard.h; sourceTree = "<group>"; };
+		2F92682123FE4D5500311624 /* NoticeCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeCard.m; sourceTree = "<group>"; };
 		2FA8522423F58A2B0052379D /* RDIconsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDIconsView.h; sourceTree = "<group>"; };
 		2FA8522523F58A2B0052379D /* RDIconsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDIconsView.m; sourceTree = "<group>"; };
 		2FA8522623F58A2B0052379D /* RDSlidePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSlidePageControl.h; sourceTree = "<group>"; };
@@ -253,6 +259,10 @@
 		0C627A372233A5EB00DEC534 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2F92681D23FBD5E400311624 /* NoticeCell.h */,
+				2F92681E23FBD5E400311624 /* NoticeCell.m */,
+				2F92682023FE4D5500311624 /* NoticeCard.h */,
+				2F92682123FE4D5500311624 /* NoticeCard.m */,
 				2FFEC2E823FACED200F923DC /* LeaveManageCell.h */,
 				2FFEC2E723FACED100F923DC /* LeaveManageCell.m */,
 				2FFEC2E023F83DD400F923DC /* IconsCell.h */,
@@ -399,6 +409,7 @@
 				0C627A1322339AFB00DEC534 /* AppDelegate.m in Sources */,
 				0C463AB6226E0FD100868AF1 /* CMSHornView.m in Sources */,
 				0C627A432233A7B600DEC534 /* MineViewController.m in Sources */,
+				2F92682223FE4D5500311624 /* NoticeCard.m in Sources */,
 				0CE5BF552258ACF800300C20 /* DDCenter.m in Sources */,
 				2FFEC2E423F8451200F923DC /* UserInfo.m in Sources */,
 				2FA8522B23F58A2B0052379D /* RDIconsView.m in Sources */,
@@ -407,6 +418,7 @@
 				0C1E788B225867420036A4E3 /* SampleCell.m in Sources */,
 				0C627A402233A7A000DEC534 /* HealthViewController.m in Sources */,
 				2FA8522C23F58A2B0052379D /* RDSlidePageControl.m in Sources */,
+				2F92681F23FBD5E400311624 /* NoticeCell.m in Sources */,
 				0CF05B042237E4D00076F932 /* ScrollCell.m in Sources */,
 				0C1E788822585DC30036A4E3 /* DDTimer.m in Sources */,
 				0C627A3A2233A60B00DEC534 /* HomeViewController.m in Sources */,

@@ -102,6 +102,8 @@ enum pageCtrolhorizontalAlignment{
 @property (nonatomic) BOOL ignoreMemory;         //是否忽略内存，default is YES //用于页数不多的情况下，滑动以后不做任何释放，为了保证页面使用的最流畅效果。
 @property (nonatomic) NSTimeInterval autoPlayTimeInterval; //自动播放时间间隔 default is 0 单位秒，默认不自动播放，如果次属性>=0则自动播放启动
 
+@property (nonatomic, retain) NSArray *imageURLs; //内部图片的url数组，也可以用于外部判断及调用使用
+
 //pagectrol水平对齐方式 默认居中
 @property(nonatomic)  enum pageCtrolhorizontalAlignment  pageCtrolalignment;
 
